@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KiwiTest</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/awesomplete.css">
+<!-- Scripts !-->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/awesomplete.min.js"></script>
+<!-- End of the scripts area !-->
+
+</head>
+
+<body>
+
+<!-- Container with the searchbox at the first screen !-->
+<div class="container-fluid main" id="main_searchbox">
+	<div class="searchbox container">
+		<div class="searchlead">
+			<h1>You're one step away from your <strong>next destination</strong></h1>
+		</div>
+		<form class="form searchform row">
+			<div class="col-sm-6 col-lg-4 searchpill ui-widget">
+				<label for="mainform_from" id="mainform_from_input">From where</label>
+				<input type="text" class="form-control searchinput" id="mainform_from" placeholder="City, airport...">
+			</div>
+			<div class="col-sm-6 col-lg-4 searchpill">
+				<label for="mainform_to">To where</label>
+				<input type="text" class="form-control searchinput" id="mainform_to" placeholder="London, Chicago, Tokio...">
+			</div>
+			<div class="col-8 col-lg-2 searchpill">
+				<label for="mainform_when">When</label>
+				<input type="date" class="form-control searchinput" id="mainform_when" placeholder="Today">
+			</div>
+			<div class="col-4 col-lg-2 searchpill">
+				<button type="button" class="btn btn-primary btn-block" onClick="doSearch();">Search</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Results container !-->
+
+<div class="container results" id="main_results" style="display: none">
+	<hr>
+	<h1>Showing trips from {{place_a}} to {{place_b}}</h1>
+	<p>From <a href="#">{{start_date}}</a> to <a href="#">{{finish_date}}</a></p>
+	<hr>
+	<ul class="results_box list-unstyled">
+		<li>
+			<div class="media results_card">
+				<img src="img/VY.png" class="results_place_image" alt="Vueling" />
+				<div class="media-body">
+					<h4><strong>15:50 – 17:30</strong> Friday, March 31</h4>
+					<h3>ORY <img class="airplane" src="img/airplane.svg" alt="to"> LGW</h3>
+					<h5>&euro; 35.00</h5>
+					<p class="small text-muted">Paris Orly Airport to London Gatwick Airport • Vueling</p>
+					<hr>
+					<div class="row results_info">
+						<div class="col-4">
+							<img src="img/wifi.svg"> No Wi-Fi
+						</div>
+						<div class="col-4">
+							<img src="img/power.svg"> USB-only
+						</div>
+						<div class="col-4"><strong>1h 20min</strong></div>
+					</div>
+					<div class="results_thisflight">
+						<div class="media">
+							<img src="img/VY.png" class="results_small_place_image" alt="Vueling" />
+							<div class="media-body">
+								<p><strong>15:50 – 17:30</strong> • Paris (ORY) – Barcelona (BCN)<br>1h40min • Vueling 8033</p>
+							</div>
+						</div>
+						<div class="layover"><p><strong>Layover</strong><br>Barcelona BCN • 1h35min</p></div>
+						<div class="media">
+							<img src="img/VY.png" class="results_small_place_image" alt="Vueling" />
+							<div class="media-body">
+								<p><strong>19:05 – 20:25</strong> • Barcelona (BCN) – London (LGW)<br>2h20min • Vueling 7820</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="media results_card">
+				<img src="img/BA.png" class="results_place_image" alt="British Airways" />
+				<div class="media-body">
+					<h4><strong>08:05 – 08:30</strong> Friday, March 31</h4>
+					<h3>ORY <img class="airplane" src="img/airplane.svg" alt="to"> LHR</h3>
+					<h5>&euro; 80.00</h5>
+					<p class="small text-muted">Paris Orly Airport to London Heathrow Airport • British Airways</p>
+					<hr>
+					<div class="row results_info">
+						<div class="col-4">
+							<img src="img/wifi.svg"> Wi-Fi Available
+						</div>
+						<div class="col-4">
+							<img src="img/power.svg"> USB-only
+						</div>
+						<div class="col-4"><strong>1h 25min</strong></div>
+					</div>
+					<div class="results_thisflight">
+						<div class="media">
+							<img src="img/BA.png" class="results_small_place_image" alt="British Airways" />
+							<div class="media-body">
+								<p><strong>08:05 – 08:30</strong> • Paris (ORY) – London (LHR)<br>1h25min • British Airways 331</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="results_bestprice"><img src="img/euro-deal.svg" class="results_bestprice_deal">Today's Best Price</div>
+			<div class="media results_card">
+				<img src="img/TO.png" class="results_place_image" alt="Transavia" />
+				<div class="media-body">
+					<h4><strong>06:50 – 07:20</strong> Friday, March 31</h4>
+					<h3>ORY <img class="airplane" src="img/airplane.svg" alt="to"> LTN</h3>
+					<h5>&euro; 30.00</h5>
+					<p class="small text-muted">Paris Orly Airport to London Luton Airport • Transavia</p>
+					<hr>
+					<div class="row results_info">
+						<div class="col-4">
+							<img src="img/wifi.svg"> No Wi-Fi
+						</div>
+						<div class="col-4">
+							<img src="img/power.svg"> No Power
+						</div>
+						<div class="col-4"><strong>1h 30min</strong></div>
+					</div>
+					<div class="results_thisflight">
+						<div class="media">
+							<img src="img/TO.png" class="results_small_place_image" alt="Transavia" />
+							<div class="media-body">
+								<p><strong>06:50 – 07:20</strong> • Paris (ORY) – London (LTN)<br>1h25min • Transavia 3640</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<hr>
+	<p>Copyright information</p>
+</div>
+
+</body>
+</html>

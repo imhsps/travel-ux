@@ -1,0 +1,180 @@
+/* CSS Document */
+
+/* Webfonts */
+@font-face {
+	font-family: "San Francisco";
+	font-weight: 600;
+	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
+}
+@font-face {
+	font-family: "San Francisco";
+	font-weight: 400;
+	src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	font-family: 'San Francisco', 'Helvetica', 'Arial', sans-serif;
+	font-weight: 400;
+	color: #484848;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+strong {
+	font-weight: 600;
+}
+
+/* Bootstrap theme changes */
+
+.btn-primary {
+	background-color: rgba(0, 151, 169, 1.00);
+	border-color: rgba(0, 151, 169, 1.00);
+}
+.btn-primary:hover, .btn-primary:active {
+	background-color: rgba(0, 151, 169, 0.90);
+	border-color: rgba(0, 151, 169, 0.90);
+}
+
+/* Search and intro area */
+.main {
+	height: 100%;
+}
+.searchbox {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%); 
+	margin: auto;
+}
+.searchbox .searchlead {
+	padding: 35px 0;
+}
+.searchbox .searchlead strong {
+	color: rgb(0, 151, 169);
+}
+.searchbox .searchform {
+	background-color: rgba(255,255,255,1.00);
+	border: rgba(230,230,230,1.00) 1px solid;
+	
+	border-radius: 5px;
+}
+.searchform .searchpill {
+	border-right: rgba(230,230,230,1.00) 1px solid;
+	border-top: rgba(230,230,230,1.00) 1px solid;
+	padding: 20px;
+}
+.searchform .searchpill:last-child {
+	border-right: none;
+}
+.searchform .searchpill label {
+	font-size: 13px;
+}
+.searchform .searchpill .searchinput {
+	padding: 0 0 4px 0;
+	border: none;
+	font-weight: 600;
+	border-radius: 0px;
+	border-bottom: rgba(0, 151, 169, 0.00) 2px solid;
+}
+.searchform .searchpill .searchinput:focus, .searchform .searchpill .searchinput:hover {
+	border-bottom: rgba(0, 151, 169, 1.00) 2px solid;
+	border-radius: 0px;
+}
+.searchform button {
+	height: 60px;
+	font-weight: 600;
+}
+
+/* Small Box*/
+.smallbox {
+	height: auto;
+}
+.smallbox .searchbox .searchlead {
+	display: none;
+}
+.smallbox .searchbox .searchform {
+	border: none;
+}
+.smallbox .searchbox {
+	position:relative;
+	top: auto;
+	transform: none; 
+	margin: auto;
+}
+.smallbox .searchform .searchpill {
+	border-right: none;
+	border-top: none;
+}
+
+/* Results area */
+.results {
+	padding-bottom: 20px;
+}
+.results .results_box li {
+	border: rgba(227,227,227,1.00) 1px solid;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	-webkit-box-shadow: 5px 0 30px 5px rgba(0,0,0,0);
+	box-shadow: 5px 0 30px 5px rgba(0,0,0,0);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.results .results_box li:hover {
+	border: rgbargba(199,199,199,1.00);
+	-webkit-box-shadow: 5px 0 30px 5px rgba(0,0,0,0.1);
+	box-shadow: 5px 0 30px 5px rgba(0,0,0,0.1);
+}
+.results .results_place_image {
+	width: 60px;
+	margin-right: 15px;
+}
+.results .airplane {
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+}
+.results .results_info {
+	
+}
+.results .results_info img {
+	width: 15px;
+	height: 15px;
+	margin: 0 10px 0 0;
+}
+.results .results_thisflight {
+	margin-top: 15px;
+}
+.results .results_small_place_image {
+	width: 45px;
+	height: 45px;
+	margin-right: 10px;
+}
+.results .layover {
+	background-color: rgba(236,236,236,1.00);
+	color: rgba(128,128,128,1.00);
+	font-size: 12px;
+	border-radius: 5px;
+	padding: 8px;
+	margin: 15px 0;
+}
+.results p {
+	margin-bottom: 0px;
+}
+.results .results_bestprice {
+	background-color: rgba(76,141,26,1.00);
+	color: rgba(255,255,255,1.00);
+	padding: 10px;
+	font-weight: 600;
+	border-radius: 5px 5px 0 0;
+}
+.results .results_bestprice_deal {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+.results .results_card {
+	padding: 20px;
+}
